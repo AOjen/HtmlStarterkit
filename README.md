@@ -22,18 +22,24 @@ The API in the kit impersonates all requests to be Izenda Admin user.
 
 2. Run the IzendaDBScript.sql in SSMS to populate your Izenda Database. In your Izenda Database, ensure the DeploymentMode = 3 (Full Integration) in IzendaSystemSettings table.
 
-4. Update the Izenda database connection string in izendadb.config file. If your connection string is unencrypted, ensure that you escape any special characters.
-   e.g. "server=My-PC\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"  ==> "server=My-PC\\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"
+3. Update the Izenda database connection string in izendadb.config file. If your connection string is unencrypted, ensure that you escape any special characters.
+   
+   ```
+   "server=My-PC\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"  ==> "server=My-PC\\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"
+   ```
  
-5. Update the WebApiUrl in index.html file to point to APIStarterKit URL. Ensure to append /api/ after the URL.
-   e.g. "WebApiUrl": "http://localhost:4546/api/",
+4. Update the WebApiUrl in index.html file to point to APIStarterKit URL. Ensure to append /api/ after the URL.
+   
+   ```
+   "WebApiUrl": "http://localhost:4546/api/",
+   ```
+   
+5. Reset IIS and clear your cache.
 
-6. Reset IIS and clear your cache.
-
-7. Browse the index.html in browser. Then Izenda application appears and you need to set the license, token key in Settings page.
+6. Browse the index.html in browser. Then Izenda application appears and you need to set the license, token key in Settings page.
 	* If you press the "Connect" button for your IzendaDB connection string, the connection string in the IzendaDB.config will be encrypted.
 
-8. Enjoy!
+7. Enjoy!
 
 
 
