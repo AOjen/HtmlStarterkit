@@ -9,6 +9,11 @@ The API in the kit impersonates all requests to be Izenda Admin user.
 
 1. If the deployment is newer than 1.25.2, please follow the upgrade instructions.
    
+2. Location of files to modify:   
+   * APIStarterKit\izendadb.config
+   * DB\IzendaDBScript.sql
+   * Website\index.html
+   
 ## Getting Started
 
 1. In Visual Studio, compile and the APIStarterKit and Website. Deploy the APIStarterKit and the Website to IIS server.
@@ -18,7 +23,7 @@ The API in the kit impersonates all requests to be Izenda Admin user.
 2. Run the IzendaDBScript.sql in SSMS to populate your Izenda Database. In your Izenda Database, ensure the DeploymentMode = 3 (Full Integration) in IzendaSystemSettings table.
 
 4. Update the Izenda database connection string in izendadb.config file. If your connection string is unencrypted, ensure that you escape any special characters.
-   e.g. server=My-PC\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;  ==> server=My-PC\\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;
+   e.g. "server=My-PC\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"  ==> "server=My-PC\\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"
  
 5. Update the WebApiUrl in index.html file to point to APIStarterKit URL. Ensure to append /api/ after the URL.
    e.g. "WebApiUrl": "http://localhost:4546/api/",
