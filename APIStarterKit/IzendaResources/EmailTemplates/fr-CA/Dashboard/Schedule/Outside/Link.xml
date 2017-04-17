@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[
+	   Veuillez trouver le tableau de bord ci-dessous.
+     <br/>
+     <br/>
+     {dashboardLink}
+     <br/>
+     <br/>
+     Cordialement,
+     <br/>
+     {currentUserName}    
+
+  ]]>
+</Body>

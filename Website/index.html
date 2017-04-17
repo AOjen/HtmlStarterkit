@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML Embedded Izenda Example</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  <style>
+    .container {
+      width: 100%;
+      height: 100vh;
+      min-height: 100vh;
+    }
+  </style>
+
+  <link href="/izenda/izenda-ui.css?db1ebd9b10aa86f1fd76" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container" id="izenda-root"></div>
+  <script type="text/javascript" src="/izenda/izenda_common.js?db1ebd9b10aa86f1fd76"></script>
+  <script type="text/javascript" src="/izenda/izenda_locales.js?db1ebd9b10aa86f1fd76"></script>
+  <script type="text/javascript" src="/izenda/izenda_vendors.js?db1ebd9b10aa86f1fd76"></script>
+  <script type="text/javascript" src="/izenda/izenda_ui.js?db1ebd9b10aa86f1fd76"></script>
+  <script>
+    $(document).ready(function () {
+        IzendaSynergy.config({
+            "WebApiUrl": "http://localhost:63679/api/",
+            "BaseUrl": "/",
+            "RootPath": "/izenda",
+            "CssFile": "izenda-ui.css",
+            "Routes": {
+                "Settings": "settings",
+                "New": "new",
+                "Dashboard": "dashboard",
+                "Report": "report",
+                "ReportViewer": "reportviewer",
+                "ReportViewerPopup": "reportviewerpopup",
+                "Viewer": "viewer"
+            },
+            "Timeout": 3600
+        });
+        IzendaSynergy.setCurrentUserContext({
+            token: "IMPERSONATED_ADMIN_TOKEN"
+        });
+
+        IzendaSynergy.render(document.getElementById("izenda-root"));
+    });
+  </script>
+</body>
+</html>

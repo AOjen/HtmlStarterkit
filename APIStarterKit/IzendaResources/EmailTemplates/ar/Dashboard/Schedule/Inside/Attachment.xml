@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[	
+	عزيزي {recipientName}،
+    <br/>
+    <br/>
+    يرجى الاطلاع على لوحة أجهزة القياس المرفقة.
+    <br/>
+    <br/>
+    التحيات،
+    <br/>
+    {currentUserName}
+	   
+  ]]>
+</Body>

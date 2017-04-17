@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[
+     عزيزي {currentUserName}،
+     <br/>
+     <br/>
+     يرجى الاطلاع على لوحة أجهزة القياس التالية.
+     <br/>
+     <br/>
+     {embedDashboardHTML}
+     <br/>
+     <br/>
+     التحيات،
+    
+  ]]>
+</Body>

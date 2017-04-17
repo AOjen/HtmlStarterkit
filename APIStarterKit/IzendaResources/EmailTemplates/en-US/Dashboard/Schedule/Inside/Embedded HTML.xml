@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[
+    Dear {recipientName},
+    <br/>
+    <br/>
+	  Please see the dashboard below.
+    <br/>
+    <br/> 
+	  {embedDashboardHTML}
+    <br/>
+    <br/> 
+	  Regards,
+    <br/>
+	  {currentUserName}
+
+    
+  ]]>
+</Body>

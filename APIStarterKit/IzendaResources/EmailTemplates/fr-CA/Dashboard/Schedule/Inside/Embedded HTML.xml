@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[
+    Cher {recipientName},
+    <br/>
+    <br/>
+	  Veuillez consulter le tableau de bord ci-dessous.
+    <br/>
+    <br/>
+	  {embedDashboardHTML}
+    <br/>
+    <br/>
+	  Cordialement,
+    <br/>
+	  {currentUserName}
+
+    
+  ]]>
+</Body>

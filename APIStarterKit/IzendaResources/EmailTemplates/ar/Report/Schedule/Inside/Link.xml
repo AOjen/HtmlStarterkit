@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[
+     عزيزي {recipientName}،
+     <br/>
+     <br/>
+     يرجى الاطلاع على الرابط أدناه التقرير.
+     <br/>
+     <br/>
+     {reportLink}
+     <br/>
+     <br/>
+     التحيات،
+     <br/>
+     {currentUserName}
+	
+       
+  ]]>
+</Body>

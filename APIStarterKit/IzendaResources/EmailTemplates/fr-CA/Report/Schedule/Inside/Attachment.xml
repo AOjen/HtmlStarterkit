@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Body>
+  <![CDATA[
+     Cher {recipientName},
+     <br/>
+     <br/>
+	   Veuillez consulter le rapport ci-joint.
+     <br/>
+     <br/>
+	   Cordialement,
+     <br/>
+	   {currentUserName}
+   
+  ]]>
+</Body>

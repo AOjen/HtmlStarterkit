@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{169526DD-A493-46D1-A4FD-692E59F1949D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APIStarterKit</RootNamespace>
+    <AssemblyName>APIStarterKit</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>IzendaReferences\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>IzendaReferences\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>IzendaReferences\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>IzendaReferences\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="evohtmltopdf">
+      <HintPath>IzendaReferences\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="EvoHtmlToPdfClient">
+      <HintPath>IzendaReferences\EvoHtmlToPdfClient.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>IzendaReferences\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags">
+      <HintPath>IzendaReferences\HtmlTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.API">
+      <HintPath>IzendaReferences\Izenda.BI.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.CacheProvider">
+      <HintPath>IzendaReferences\Izenda.BI.CacheProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.CacheProvider.Memcache">
+      <HintPath>IzendaReferences\Izenda.BI.CacheProvider.Memcache.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Core">
+      <HintPath>IzendaReferences\Izenda.BI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataAdaptor.RDBMS">
+      <HintPath>IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataAdaptor.RDBMS.Azure">
+      <HintPath>IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataAdaptor.RDBMS.MySQL">
+      <HintPath>IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.MySQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataAdaptor.RDBMS.Oracle">
+      <HintPath>IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataAdaptor.RDBMS.PostgreSQL">
+      <HintPath>IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.PostgreSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataAdaptor.RDBMS.SQL">
+      <HintPath>IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.SQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.DataSourceAdapter">
+      <HintPath>IzendaReferences\Izenda.BI.DataSourceAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Csv">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Csv.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Excel">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Html">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Json">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Pdf">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Word">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Exporting.Xml">
+      <HintPath>IzendaReferences\Izenda.BI.Exporting.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Framework">
+      <HintPath>IzendaReferences\Izenda.BI.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Licensing.Validator">
+      <HintPath>IzendaReferences\Izenda.BI.Licensing.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Logging">
+      <HintPath>IzendaReferences\Izenda.BI.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Logging.Log4Net">
+      <HintPath>IzendaReferences\Izenda.BI.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Logic">
+      <HintPath>IzendaReferences\Izenda.BI.Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.QueryNormalizer.MySQL">
+      <HintPath>IzendaReferences\Izenda.BI.QueryNormalizer.MySQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.QueryNormalizer.Oracle">
+      <HintPath>IzendaReferences\Izenda.BI.QueryNormalizer.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.QueryNormalizer.PostgreSQL">
+      <HintPath>IzendaReferences\Izenda.BI.QueryNormalizer.PostgreSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.QueryNormalizer.SQL">
+      <HintPath>IzendaReferences\Izenda.BI.QueryNormalizer.SQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.QueryNormalizer.Utility">
+      <HintPath>IzendaReferences\Izenda.BI.QueryNormalizer.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.RDBMS">
+      <HintPath>IzendaReferences\Izenda.BI.RDBMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Resource">
+      <HintPath>IzendaReferences\Izenda.BI.Resource.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository.RDBMS">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.RDBMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository.RDBMS.Azure">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.RDBMS.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository.RDBMS.MySQL">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.RDBMS.MySQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository.RDBMS.Oracle">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.RDBMS.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository.RDBMS.PostgreSQL">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.RDBMS.PostgreSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.SystemRepository.RDBMS.SQL">
+      <HintPath>IzendaReferences\Izenda.BI.SystemRepository.RDBMS.SQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.BI.Utility">
+      <HintPath>IzendaReferences\Izenda.BI.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>IzendaReferences\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>IzendaReferences\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.TransientFaultHandling.Core">
+      <HintPath>IzendaReferences\Microsoft.Practices.TransientFaultHandling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>IzendaReferences\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>IzendaReferences\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>IzendaReferences\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Aspnet">
+      <HintPath>IzendaReferences\Nancy.Hosting.Aspnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor">
+      <HintPath>IzendaReferences\Nancy.ViewEngines.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor.BuildProviders">
+      <HintPath>IzendaReferences\Nancy.ViewEngines.Razor.BuildProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.3.3.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Licensing, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>IzendaReferences\Rhino.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IzendaConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="IzendaReferences\ar\Izenda.BI.Resource.resources.dll" />
+    <Content Include="IzendaReferences\Common.Logging.Core.dll" />
+    <Content Include="IzendaReferences\Common.Logging.dll" />
+    <Content Include="IzendaReferences\Dapper.dll" />
+    <Content Include="IzendaReferences\de\Npgsql.resources.dll" />
+    <Content Include="IzendaReferences\DocumentFormat.OpenXml.dll" />
+    <Content Include="IzendaReferences\es\Npgsql.resources.dll" />
+    <Content Include="IzendaReferences\evohtmltopdf.dll" />
+    <Content Include="IzendaReferences\EvoHtmlToPdfClient.dll" />
+    <Content Include="IzendaReferences\Exporting.css" />
+    <Content Include="IzendaReferences\fi\Npgsql.resources.dll" />
+    <Content Include="IzendaReferences\fr-CA\Izenda.BI.Resource.resources.dll" />
+    <Content Include="IzendaReferences\fr\Npgsql.resources.dll" />
+    <Content Include="IzendaReferences\HtmlAgilityPack.dll" />
+    <Content Include="IzendaReferences\HtmlTags.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.API.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.CacheProvider.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.CacheProvider.Memcache.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Core.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.Azure.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.MySQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.Oracle.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.PostgreSQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataAdaptor.RDBMS.SQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.DataSourceAdapter.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Csv.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Excel.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Html.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Json.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Pdf.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Word.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Exporting.Xml.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Framework.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Licensing.Validator.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Logging.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Logging.Log4Net.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Logic.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.QueryNormalizer.MySQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.QueryNormalizer.Oracle.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.QueryNormalizer.PostgreSQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.QueryNormalizer.SQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.QueryNormalizer.Utility.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.RDBMS.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Resource.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.RDBMS.Azure.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.RDBMS.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.RDBMS.MySQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.RDBMS.Oracle.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.RDBMS.PostgreSQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.SystemRepository.RDBMS.SQL.dll" />
+    <Content Include="IzendaReferences\Izenda.BI.Utility.dll" />
+    <Content Include="IzendaReferences\ja\Npgsql.resources.dll" />
+    <Content Include="IzendaReferences\log4net.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.TransientFaultHandling.Core.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.Unity.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+    <Content Include="IzendaReferences\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="IzendaReferences\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="IzendaReferences\Mono.Security.dll" />
+    <Content Include="IzendaReferences\MySql.Data.dll" />
+    <Content Include="IzendaReferences\Nancy.dll" />
+    <Content Include="IzendaReferences\Nancy.Hosting.Aspnet.dll" />
+    <Content Include="IzendaReferences\Nancy.ViewEngines.Razor.dll" />
+    <Content Include="IzendaReferences\Newtonsoft.Json.dll" />
+    <Content Include="IzendaReferences\Npgsql.dll" />
+    <Content Include="IzendaReferences\Oracle.ManagedDataAccess.dll" />
+    <Content Include="IzendaReferences\Oracle.ManagedDataAccessDTC.dll" />
+    <Content Include="IzendaReferences\Quartz.dll" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\cities_mysql.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\cities_orcl.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\cities_posgres.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\cities_sql.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\postal_code_mysql.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\postal_code_orcl.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\postal_code_posgres.sql" />
+    <Content Include="IzendaReferences\Resources\SQLScripts\postal_code_sql.sql" />
+    <Content Include="IzendaReferences\Rhino.Licensing.dll" />
+    <Content Include="IzendaReferences\System.Net.Http.dll" />
+    <Content Include="IzendaReferences\System.Web.Razor.dll" />
+    <Content Include="IzendaReferences\zh-CN\Npgsql.resources.dll" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Schedule\Inside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Schedule\Inside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Schedule\Inside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Schedule\Outside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Schedule\Outside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Schedule\Outside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Subscription\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Subscription\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Dashboard\Subscription\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Schedule\Inside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Schedule\Inside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Schedule\Inside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Schedule\Outside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Schedule\Outside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Schedule\Outside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Subscription\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Subscription\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\ar\Report\Subscription\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Schedule\Inside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Schedule\Inside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Schedule\Inside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Schedule\Outside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Schedule\Outside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Schedule\Outside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Subscription\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Subscription\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Dashboard\Subscription\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Schedule\Inside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Schedule\Inside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Schedule\Inside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Schedule\Outside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Schedule\Outside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Schedule\Outside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Subscription\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Subscription\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\en-US\Report\Subscription\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Schedule\Inside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Schedule\Inside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Schedule\Inside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Schedule\Outside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Schedule\Outside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Schedule\Outside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Subscription\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Subscription\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Dashboard\Subscription\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Schedule\Inside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Schedule\Inside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Schedule\Inside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Schedule\Outside\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Schedule\Outside\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Schedule\Outside\Link.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Subscription\Attachment.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Subscription\Embedded HTML.xml" />
+    <Content Include="IzendaResources\EmailTemplates\fr-CA\Report\Subscription\Link.xml" />
+    <Content Include="IzendaResources\Export\Contents\Exporting.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IzendaReferences\evointernal.dat" />
+    <Content Include="IzendaReferences\Resources\CustomFunctionSample.config" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-ab-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-bc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-mb-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-nb-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-nf-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-ns-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-nt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-nu-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-on-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-pe-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-qc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-sk-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\ca\ca-yt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\africa.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\antarctica.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\asia.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\british-isles.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\central-america.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\europe.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\middle-east.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\nordic-countries.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\north-america.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\scandinavia.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\south-america.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continents\usa-and-canada.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\africa.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\antarctica.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\asia.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\british-isles.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\central-america.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\europe.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\middle-east.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\nordic-countries.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\north-america.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\scandinavia.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\south-america.geo.json" />
+    <Content Include="IzendaResources\Content\maps\continent\usa-and-canada.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ad-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ae-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\af-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ag-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\al-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\am-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ao-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ar-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\as-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\at-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\au-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\az-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ba-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bb-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bd-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\be-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bf-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bh-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bi-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bj-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bo-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\br-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bs-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\by-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\bz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ca-ab-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ca-all-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ca-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ca-pe-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ca-sk-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cd-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cf-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ch-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ci-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ck-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cl-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\co-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cu-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cv-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cy-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\cz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\de-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\dj-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\dk-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\dm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\do-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\dz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ec-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ee-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\eg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\eh-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\er-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\es-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\et-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fi-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fj-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fo-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fr-all-all-mainland.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fr-all-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fr-all-mainland.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\fr-re-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ga-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gb-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gb-countries.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gd-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ge-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gh-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gl-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gq-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gu-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\gy-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\hr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ht-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\id-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ie-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\il-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\in-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\iq-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\is-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\jm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\jo-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\jp-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ke-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kh-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\km-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kp-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kv-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\kz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\la-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lb-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\li-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lk-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ls-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lu-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\lv-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ly-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ma-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\md-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\me-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mk-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ml-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mp-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mu-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mx-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\my-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\mz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\na-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\nc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ne-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ng-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ni-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\nl-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\np-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\nr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\nz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\om-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pa-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ph-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pk-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pl-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\pw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\py-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\qa-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ro-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ru-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\rw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sa-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sb-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sd-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\se-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\si-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sl-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\so-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ss-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\st-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sv-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sx-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sy-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\sz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\td-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tf-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tg-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\th-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tj-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tl-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tr-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\tt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ua-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-all-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-all-territories.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-la-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-sc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-ut-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\us-wy-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\uy-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\uz-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\vc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ve-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\vi-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\vn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\wf-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ws-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\ye-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\za-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\zm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\countries\zw-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ak-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-al-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-az-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ca-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-co-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ct-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-dc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-de-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ga-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-hi-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ia-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-id-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-il-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ks-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ky-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-la-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ma-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-md-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-me-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-mi-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-mn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-mo-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ms-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-mt-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-nc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-nd-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ne-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-nh-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-nj-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-nm-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-nv-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ok-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-or-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-pa-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ri-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-sc-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-sd-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-tn-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-tx-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-ut-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-va-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-wa-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-wi-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-wv-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\us\us-wy-all.geo.json" />
+    <Content Include="IzendaResources\Content\maps\world-continents.geo.json" />
+    <Content Include="IzendaResources\Content\maps\world.geo.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63679</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63679/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
