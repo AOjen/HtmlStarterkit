@@ -1,5 +1,5 @@
 # Izenda Html Starter Kit
-The starter kit demonstrates how to integrate Izenda BI 7 Series tool to an html page. 
+The starter kit demonstrates how to integrate Izenda BI 7 Series tool in an html page. 
 The API in the kit impersonates all requests to be Izenda Admin user.
 
 ## Izenda Version
@@ -16,7 +16,7 @@ The API in the kit impersonates all requests to be Izenda Admin user.
    
 ## Getting Started
 
-1. In Visual Studio, compile and the APIStarterKit and Website. Deploy the APIStarterKit and the Website to IIS server.
+1. In Visual Studio, compile and deploy the APIStarterKit and Website. Deploy the APIStarterKit and the Website to IIS server.
 	* APIStarterKit : Modified API to work with an HTML Deployment
 	* Website : An HTML Page rendering an Izenda page.
 
