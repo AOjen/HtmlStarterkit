@@ -25,7 +25,9 @@ The API in the kit impersonates all requests to be Izenda Admin user.
 3. Update the Izenda database connection string in izendadb.config file. If your connection string is unencrypted, ensure that you escape any special characters.
    
    ```
-   "server=My-PC\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"  ==> "server=My-PC\\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"
+   "server=My-PC\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"  
+   ==> 
+   "server=My-PC\\SQLEXPRESS;database=HTML_Izenda;User Id=Test;Password=test123;"
    ```
  
 4. Update the WebApiUrl in index.html file to point to APIStarterKit URL. Ensure to append /api/ after the URL.
