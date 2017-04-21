@@ -774,6 +774,7 @@
     <Content Include="IzendaResources\Content\maps\us\us-wy-all.geo.json" />
     <Content Include="IzendaResources\Content\maps\world-continents.geo.json" />
     <Content Include="IzendaResources\Content\maps\world.geo.json" />
+    <Content Include="izendadb.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <PropertyGroup>
