@@ -2,6 +2,7 @@
 using Izenda.BI.Logic.CustomConfiguration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -19,8 +20,8 @@ namespace APIStarterKit.App_Start
                  */
                 return new ValidateTokenResult
                 {
-                    UserName = "IzendaAdmin",
-                    TenantUniqueName = ""
+                    UserName = ConfigurationManager.AppSettings["IzendaUsername"],
+                    TenantUniqueName = ConfigurationManager.AppSettings["IzendaTenantUniqueName"]
                 };
             };
         }
